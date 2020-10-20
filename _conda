@@ -154,7 +154,7 @@ __conda_envs(){
         describe_opts+=("-V")
     fi
 
-    envs=($(ls $ls_opts ${${CONDA_EXE}%bin/conda}/envs && echo base && (test -n "$unnamed" && cat ${HOME:?}/.conda/environments.txt) | cut -f1 -d' '))
+    envs=($(ls $ls_opts ~/conda-envs && echo base && (test -n "$unnamed" && cat ${HOME:?}/.conda/environments.txt) | cut -f1 -d' '))
     _describe $describe_opts -t envs 'conda environments' envs
 }
 
